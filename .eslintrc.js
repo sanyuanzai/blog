@@ -16,9 +16,10 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint', 'prettier', 'react-hooks'],
   rules: {
-    '@typescript-eslint/no-var-requires': 'off'
+    '@typescript-eslint/no-var-requires': 'off',
     // '@typescript-eslint/no-explicit-any': 'off'
+    'prettier/prettier': ['error', { endOfLine: 'auto' }]
   }
 }

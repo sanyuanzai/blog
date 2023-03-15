@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react'
+import { BrowserRouter } from 'react-router-dom'
 import type { FC, ReactNode } from 'react'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import './App.css'
+import Header from './layout/header'
+import Main from './layout/main'
+import Footer from './layout/footer'
 interface Iprops {
   children?: ReactNode
 }
@@ -36,9 +41,9 @@ const GlobalStyle = createGlobalStyle<any>`
     color-scheme: ${({ theme }) => theme.name || 'normal'};
     --color-head:${({ theme }) => theme.color.head || 'inherit'};
   }
-  h1{
-    color:var(--color-head)
-  }
+  h1 {
+  color: var(--color-head);
+}
 `
 const App: FC<Iprops> = () => {
   const [mode, setMode] = useState<ColorSchemeMode>(ColorSchemeMode.dark)
@@ -63,8 +68,14 @@ const App: FC<Iprops> = () => {
   }, [])
   return (
     <ThemeProvider theme={COLOR_THEME[mode]}>
+      <BrowserRouter>
+        <div className="app">
+          <Header />
+          <Main />
+          <Footer />
+        </div>
+      </BrowserRouter>
       <GlobalStyle />
-      <h1>App</h1>
     </ThemeProvider>
   )
 }

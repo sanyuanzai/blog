@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "comments",
+  "info": {
+    "singularName": "comment",
+    "pluralName": "comments",
+    "displayName": "comment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nickname": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "comment": {
+      "type": "richtext"
+    },
+    "postId": {
+      "type": "integer"
+    },
+    "avatar": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "toReplyId": {
+      "type": "integer"
+    },
+    "toUserName": {
+      "type": "string"
+    }
+  }
+}

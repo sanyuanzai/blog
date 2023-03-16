@@ -1,14 +1,4 @@
-html {
-  font-size: 62.5%;
-}
-html body #root {
-  width: calc(100vw-100px);
-  @media screen and(min-width: 800px) {
-    width: calc(100vw-30px);
-  }
-  display: flex;
-  justify-content: center;
-}
+@import './themes/base.css';
 html body .app {
   min-height: 100vh;
   width: 85%;

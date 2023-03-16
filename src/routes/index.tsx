@@ -7,6 +7,7 @@ const Home = React.lazy(() => import('../pages/Home'))
 const MessageBoard = React.lazy(() => import('../pages/MessageBoard'))
 const Say = React.lazy(() => import('../pages/Say'))
 const Timeline = React.lazy(() => import('../pages/Timeline'))
+const Article = React.lazy(() => import('../pages/Article'))
 const routes = [
   {
     path: '/',
@@ -39,6 +40,7 @@ const routes = [
   {
     path: '/messageboard',
     element: <MessageBoard />
-  }
+  },
+  { path: '/post/:id', element: <Article /> }
 ]
 export default routes

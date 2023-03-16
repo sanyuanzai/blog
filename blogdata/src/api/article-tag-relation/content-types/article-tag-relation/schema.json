@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "article_tag_relations",
+  "info": {
+    "singularName": "article-tag-relation",
+    "pluralName": "article-tag-relations",
+    "displayName": "articleTagRelation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "articleId": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::article.article"
+    },
+    "tag": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tag.tag"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tag.tag"
+    }
+  }
+}

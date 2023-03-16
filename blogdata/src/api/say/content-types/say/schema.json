@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "says",
+  "info": {
+    "singularName": "say",
+    "pluralName": "says",
+    "displayName": "say"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "text"
+    }
+  }
+}

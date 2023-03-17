@@ -1,16 +1,18 @@
+import { Card } from 'antd'
 import styled from 'styled-components'
-export const CardContainer = styled.div`
+export const CardContainer = styled(Card)`
   width: 100%;
   background-color: ${({ theme }) => theme.color.bgPrimary};
-  padding: 1rem 2rem;
-  min-height: 15rem;
-  border-radius: 1rem;
-  margin-bottom: 2rem;
-  transition: transform ease 400ms;
+  padding: 2.5% 5%;
+  min-width: 15rem;
+  border-radius: 0.4rem;
+  margin-bottom: 1rem;
+  transition: box-shadow ease 400ms;
   :hover {
-    transform: scale(1.1);
+    box-shadow: 0 0 8px 6px rgba(0, 0, 0, 0.4);
+    /* transform: scale(1.05); */
   }
   @media screen and (max-width: 800px) {
-    padding: 1rem 0.5rem;
+    padding: 0.5rem 1rem;
   }
 `

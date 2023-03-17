@@ -1,3 +1,4 @@
+import { ScreenWidth } from '@/themes/variables'
 import styled from 'styled-components'
 export const HeaderContainer = styled.div`
   width: 100%;
@@ -48,13 +49,12 @@ export const HeaderContainer = styled.div`
       }
       .ant-input-group-wrapper {
         margin-left: 1.5rem;
-        .ant-input {
-          outline: none;
-        }
-        .ant-btn {
-          outline: none;
-        }
       }
+    }
+  }
+  @media screen and (max-width: ${ScreenWidth.PhoneWidth}) {
+    .bottom {
+      display: none;
     }
   }
 `

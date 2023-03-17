@@ -2,8 +2,8 @@ import React, { useState, useEffect, useCallback } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import type { FC, ReactNode } from 'react'
 import { ThemeProvider } from 'styled-components'
-import { ConfigProvider, Divider } from 'antd'
-import './App.css'
+import { ConfigProvider } from 'antd'
+import { AppContainer } from './app_style'
 import Header from './layout/header'
 import Main from './layout/main'
 import Footer from './layout/footer'
@@ -48,11 +48,11 @@ const App: FC<Iprops> = () => {
         }}
       >
         <BrowserRouter>
-          <div className="app">
+          <AppContainer>
             <Header setMode={setMode} />
             <Main />
             <Footer />
-          </div>
+          </AppContainer>
         </BrowserRouter>
       </ConfigProvider>
       <GlobalStyle />

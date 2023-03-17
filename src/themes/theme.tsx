@@ -11,7 +11,8 @@ const COLOR_THEME = [
       navbg: '#F1F1F1',
       bgPrimary: '#F9F9F9',
       btn: '#eee',
-      txtPrimary: '#eeecec'
+      textPrimary: '#999',
+      descPrimary: '#363636'
     },
     icon: {
       modeIcon: 'https://i.328888.xyz/2023/03/16/KXOez.png'
@@ -25,7 +26,8 @@ const COLOR_THEME = [
       navbg: '#1A1A1A',
       bgPrimary: '#363636',
       btn: '#999',
-      txtPrimary: '#f7f74b'
+      textPrimary: '#999',
+      descPrimary: '#F9F9F9'
     },
     icon: {
       modeIcon: 'https://i.328888.xyz/2023/03/16/KxQkw.png'

@@ -1,31 +1,23 @@
 import styled from 'styled-components'
+import { ScreenWidth } from '@/themes/variables'
 export const HomeContainer = styled.div`
   width: 100%;
-  .bg {
-    height: calc(100vh - 8rem);
-    background-color: pink;
-    display: grid;
-    border-radius: 1rem;
-    place-items: center;
-  }
   .content_container {
+    width: 100%;
     display: flex;
     .main {
-      width: 70%;
-      margin-right: 5%;
+      width: ${ScreenWidth.PhoneWidth};
     }
     .aside {
-      width: 30%;
+      width: ${ScreenWidth.AsideWidth};
     }
-    @media screen and (max-width: 800px) {
-      display: block;
+    @media screen and (max-width: ${ScreenWidth.IpadWidth}) {
+      padding: 1rem;
       .main {
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 5%;
+        flex: 1;
       }
       .aside {
-        width: 100%;
+        display: none;
       }
     }
   }

@@ -7,13 +7,15 @@ export const HomeContainer = styled.div`
     display: flex;
     .main {
       width: ${ScreenWidth.PhoneWidth};
+      padding-right: 1rem;
     }
     .aside {
       width: ${ScreenWidth.AsideWidth};
+      padding-left: 1rem;
     }
     @media screen and (max-width: ${ScreenWidth.IpadWidth}) {
-      padding: 1rem;
       .main {
+        padding: 0 1rem;
         flex: 1;
       }
       .aside {

@@ -12,7 +12,7 @@ export const CardContainer = styled(Card)`
     box-shadow: 0 0 8px 6px rgba(0, 0, 0, 0.4);
     /* transform: scale(1.05); */
   }
-  @media screen and (max-width: 800px) {
+  /* @media screen and (max-width: 800px) {
     padding: 0.5rem 1rem;
-  }
+  } */
 `

@@ -4,9 +4,10 @@ import { CardContainer } from '@/components/MainContainer'
 import { HomeMainContainer } from './style'
 import { getArticle } from '@/api'
 import { useMount } from '@/utils/hooks/useMount'
-import { ArticlesProps } from '@/api/request/dataTypes'
+import { ArticlesProps } from '@/redux/dataTypes'
 import { ArticleCard } from './ArticleCard'
 import { useNavigate } from 'react-router-dom'
+import { useRequest } from '@/utils/hooks/useRequest'
 
 interface Iprops {
   children?: ReactNode
@@ -17,8 +18,9 @@ const HomeMain: FC<Iprops> = ({ className }) => {
 
   const [articles, setArticles] = useState<ArticlesProps[]>()
   useMount(() => {
-    getArticle({ url: '/articles' }).then((data) => setArticles(data.data))
+    getArticle<ArticlesProps>().then((res) => setArticles(res.data))
   })
+
   function ArticleDetailHandler(id: number) {
     navigate(`/post/${id}`)
   }

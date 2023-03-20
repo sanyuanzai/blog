@@ -1,6 +1,5 @@
 import React from 'react'
 import type { FC, ReactNode } from 'react'
-import { CardContainer } from '../../../../components/MainContainer'
 import { HomeAsideContainer } from './style'
 import MyCard from './MyCard'
 import TagsList from './TagsList'

@@ -17,12 +17,6 @@
     },
     "color": {
       "type": "string"
-    },
-    "article_id": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::article.article",
-      "inversedBy": "categorie_id"
     }
   }
 }

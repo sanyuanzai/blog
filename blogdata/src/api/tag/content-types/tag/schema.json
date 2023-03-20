@@ -12,14 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "tag": {
+    "name": {
       "type": "string"
     },
     "color": {
       "type": "string"
-    },
-    "articleId": {
-      "type": "integer"
     }
   }
 }

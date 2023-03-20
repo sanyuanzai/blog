@@ -4,7 +4,7 @@
   "info": {
     "singularName": "article-tag-relation",
     "pluralName": "article-tag-relations",
-    "displayName": "articleTagRelation",
+    "displayName": "articlesTagsRelation",
     "description": ""
   },
   "options": {
@@ -12,19 +12,14 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "articleId": {
+    "article_id": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::article.article"
     },
-    "tag": {
+    "tag_id": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::tag.tag"
-    },
-    "tags": {
-      "type": "relation",
-      "relation": "oneToMany",
       "target": "api::tag.tag"
     }
   }

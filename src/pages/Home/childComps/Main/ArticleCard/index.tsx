@@ -1,6 +1,6 @@
 import React from 'react'
 import type { FC } from 'react'
-import { ArticlesProps } from '@/api/request/dataTypes'
+import { ArticlesProps } from '@/redux/dataTypes'
 import { ArticleCardContainer } from './styled'
 import { MyIcon } from '@/components/Icon'
 interface Iprops {
@@ -16,7 +16,7 @@ export const ArticleCard: FC<Iprops> = ({ article }) => {
         <MyIcon type="icon-calendar" style={{ width: '1rem' }} />
         <span id="postdate"> Posted On {createdAt}</span>
       </div>
-      <div className="text">{content}</div>
+      <p className="text">{content}</p>
       <div className="desc">
         <span id="__">Posted in</span>
         <span id="categore">{categories_id} </span>

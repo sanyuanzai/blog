@@ -4,7 +4,7 @@
   "info": {
     "singularName": "comment",
     "pluralName": "comments",
-    "displayName": "comment",
+    "displayName": "reply",
     "description": ""
   },
   "options": {
@@ -21,27 +21,37 @@
     "url": {
       "type": "string"
     },
-    "comment": {
+    "content": {
       "type": "richtext"
     },
-    "postId": {
+    "conment_id": {
       "type": "integer"
     },
     "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "toReplyId": {
       "type": "integer"
     },
     "toUserName": {
       "type": "string"
+    },
+    "is_author": {
+      "type": "integer",
+      "default": 0
+    },
+    "to_conment_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::conment.conment"
     }
   }
 }

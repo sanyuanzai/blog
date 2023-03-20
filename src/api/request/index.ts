@@ -1,7 +1,5 @@
 import axios from 'axios'
 import type { AxiosRequestConfig, AxiosInstance } from 'axios'
-import { BASE_URL, TIME_OUT } from '../config'
-import { resolve } from 'path'
 
 const QZRequest = class {
   instance: AxiosInstance
@@ -13,11 +11,16 @@ const QZRequest = class {
     )
   }
   request<T = any>(config: AxiosRequestConfig) {
-    return this.instance.request<T>(config)
+    return new Promise<T>((resolve, reject) => {
+      this.instance
+        .request<any, T>(config)
+        .then((res) => resolve(res))
+        .catch((err) => reject(err))
+    })
   }
   get<T>(config: AxiosRequestConfig) {
     return this.instance.request<T>({ ...config, method: 'GET' })
   }
 }
 
-export default new QZRequest({ baseURL: BASE_URL, timeout: TIME_OUT })
+export default QZRequest

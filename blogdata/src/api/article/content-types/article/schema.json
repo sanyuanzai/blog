@@ -20,18 +20,12 @@
       "type": "richtext",
       "required": true
     },
-    "tag": {
-      "type": "string"
-    },
     "author": {
       "type": "string",
       "required": true
     },
     "categorie_id": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::categorie.categorie",
-      "mappedBy": "article_id"
+      "type": "integer"
     }
   }
 }

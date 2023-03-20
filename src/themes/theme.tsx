@@ -7,6 +7,7 @@ const COLOR_THEME = [
     name: 'light',
     color: {
       bg: '#FFF',
+      fontPrimary: '#1A1A1A',
       head: '#3FB887',
       navbg: '#F1F1F1',
       bgPrimary: '#F9F9F9',
@@ -22,6 +23,7 @@ const COLOR_THEME = [
     name: 'dark',
     color: {
       bg: '#1A1A1A',
+      fontPrimary: '#F1F1F1',
       head: '#16beec',
       navbg: '#1A1A1A',
       bgPrimary: '#363636',

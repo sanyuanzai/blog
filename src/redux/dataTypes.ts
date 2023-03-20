@@ -8,3 +8,12 @@ export interface ArticlesProps {
   content: string
   id: number
 }
+export interface TagListProps {
+  name: string
+  id: number
+}
+export interface CategoriesProps {
+  name: string
+  article_id: any //修改
+  id: number
+}

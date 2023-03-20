@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import type { FC, ReactNode } from 'react'
-import { getTaglist } from '@/api'
-import { TagListProps } from '@/redux/dataTypes'
 import AsidePannel from '../AsidePannel'
 import { AsideContentContainer } from '../CategoriesList/style'
+import { useAppSelector } from '@/redux/useStore'
+import { getTaglist } from '@/api'
 interface Iprops {
   children?: ReactNode
 }
 const Content: FC = () => {
-  const [tags, setTags] = useState<TagListProps[]>()
-  useEffect(() => {
-    getTaglist<TagListProps>().then((res) => setTags(res.data))
-  }, [])
+  const { result: tags, error, loading } = getTaglist()
   return (
     <AsideContentContainer column={'column'}>
       {tags?.map((tag) => (

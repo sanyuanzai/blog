@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import type { FC, ReactNode } from 'react'
-import { getCategorielist } from '@/api'
-import { CategoriesProps } from '@/redux/dataTypes'
-import { useMount } from '@/utils/hooks/useMount'
 import AsidePannel from '../AsidePannel'
 import { AsideContentContainer } from './style'
+import { useAppSelector } from '@/redux/useStore'
+import { getCategorielist } from '@/api'
 interface Iprops {
   children?: ReactNode
 }
@@ -21,12 +20,7 @@ const CategoriesList: FC<Iprops> = () => {
 }
 export default CategoriesList
 const Content: FC = () => {
-  const [categories, setCategories] = useState<CategoriesProps[]>()
-  useMount(() => {
-    getCategorielist<CategoriesProps>().then((res) => {
-      setCategories(res.data)
-    })
-  })
+  const { result: categories, loading, error } = getCategorielist()
   return (
     <AsideContentContainer>
       {categories?.map((categorie) => (

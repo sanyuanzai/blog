@@ -1,14 +1,25 @@
 import QZRequest from './request'
-import type { AxiosRequestConfig } from 'axios'
 import { BASE_URL, TIME_OUT } from './config'
+import {
+  ArticlesProps,
+  CategoriesProps,
+  CommentProps,
+  TagListProps
+} from '@/redux/dataTypes'
 
 export const qzRequest = new QZRequest({ baseURL: BASE_URL, timeout: TIME_OUT })
-export function getArticle<T>() {
-  return qzRequest.get<T[]>({ url: './articles' })
+export function getArticles() {
+  return qzRequest.get<ArticlesProps[]>({ url: './articles' })
 }
-export function getTaglist<T>() {
-  return qzRequest.get<T[]>({ url: './tags' })
+export function getArticleById(id: string) {
+  return qzRequest.get<ArticlesProps>({ url: `./articles/${id}` })
 }
-export function getCategorielist<T>() {
-  return qzRequest.get<T[]>({ url: './categories' })
+export function getTaglist() {
+  return qzRequest.get<TagListProps[]>({ url: './tags' })
+}
+export function getCategorielist() {
+  return qzRequest.get<CategoriesProps[]>({ url: './categories' })
+}
+export function getComment() {
+  return qzRequest.get<CommentProps[]>({ url: './comments' })
 }

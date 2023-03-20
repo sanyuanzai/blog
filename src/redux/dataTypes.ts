@@ -17,3 +17,9 @@ export interface CategoriesProps {
   article_id: any //修改
   id: number
 }
+export interface CommentProps {
+  id: number
+  nickname: string
+  content: string
+  link?: string
+}

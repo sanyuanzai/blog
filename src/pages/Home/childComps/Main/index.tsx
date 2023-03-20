@@ -1,24 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import type { FC, ReactNode } from 'react'
 import { CardContainer } from '@/components/CardContainer'
 import { HomeMainContainer } from './style'
-import { getArticle } from '@/api'
-import { useMount } from '@/utils/hooks/useMount'
-import { ArticlesProps } from '@/redux/dataTypes'
 import { ArticleCard } from './ArticleCard'
-import { useNavigate } from 'react-router-dom'
-import { useRequest } from '@/utils/hooks/useRequest'
+import { useAppDispatch } from '@/redux/useStore'
+import { getArticles } from '@/api'
 
 interface Iprops {
   children?: ReactNode
   className: string
 }
 const HomeMain: FC<Iprops> = ({ className }) => {
-  const [articles, setArticles] = useState<ArticlesProps[]>()
-  useMount(() => {
-    getArticle<ArticlesProps>().then((res) => setArticles(res.data))
-  })
-
+  const { result: articles, loading, error } = getArticles()
   return (
     <HomeMainContainer className={className}>
       {articles?.map((article) => (

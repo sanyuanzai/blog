@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 interface AsideContentProps {
   column?: string
-  // onColorChange?: boolean
+  onColorChange?: boolean
 }
 export const AsideContentContainer = styled.div<AsideContentProps>`
   display: flex;

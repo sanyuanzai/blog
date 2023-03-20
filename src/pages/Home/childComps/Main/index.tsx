@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import type { FC, ReactNode } from 'react'
-import { CardContainer } from '@/components/MainContainer'
+import { CardContainer } from '@/components/CardContainer'
 import { HomeMainContainer } from './style'
 import { getArticle } from '@/api'
 import { useMount } from '@/utils/hooks/useMount'
@@ -14,23 +14,15 @@ interface Iprops {
   className: string
 }
 const HomeMain: FC<Iprops> = ({ className }) => {
-  const navigate = useNavigate()
-
   const [articles, setArticles] = useState<ArticlesProps[]>()
   useMount(() => {
     getArticle<ArticlesProps>().then((res) => setArticles(res.data))
   })
 
-  function ArticleDetailHandler(id: number) {
-    navigate(`/post/${id}`)
-  }
   return (
     <HomeMainContainer className={className}>
       {articles?.map((article) => (
-        <CardContainer
-          key={article.id}
-          onClick={() => ArticleDetailHandler(article.id)}
-        >
+        <CardContainer key={article.id}>
           <ArticleCard article={article} />
         </CardContainer>
       ))}

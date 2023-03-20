@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navigate } from 'react-router-dom'
 const About = React.lazy(() => import('../pages/About'))
-const ArticleCategories = React.lazy(() => import('../pages/ArticleCategories'))
+const BlogArticlesList = React.lazy(() => import('../pages/BlogArticlesList'))
 const ArticleTags = React.lazy(() => import('../pages/ArticleTags'))
 const Home = React.lazy(() => import('../pages/Home'))
 const MessageBoard = React.lazy(() => import('../pages/MessageBoard'))
@@ -26,8 +26,8 @@ const routes = [
     element: <ArticleTags />
   },
   {
-    path: '/categories',
-    element: <ArticleCategories />
+    path: '/post',
+    element: <BlogArticlesList />
   },
   {
     path: '/timeline',

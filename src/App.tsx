@@ -49,7 +49,7 @@ const App: FC<Iprops> = () => {
       >
         <BrowserRouter>
           <AppContainer>
-            <Header setMode={setMode} />
+            <Header setMode={setMode} mode={mode} />
             <Main />
             <Footer />
           </AppContainer>

@@ -7,6 +7,10 @@ export const ArticleCardContainer = styled.div`
   .title {
     font-weight: 500;
     color: ${({ theme }) => theme.color.head};
+    cursor: pointer;
+    :hover {
+      text-decoration: underline;
+    }
   }
   .date {
     margin: 1rem 0;
@@ -26,10 +30,10 @@ export const ArticleCardContainer = styled.div`
   .desc {
     margin-top: 3rem;
     font-size: 0.5rem;
-    cursor: pointer;
     #tag,
     #categorie {
       color: ${({ theme }) => theme.color.descPrimary};
+      cursor: pointer;
       :hover {
         text-decoration: underline;
         color: ${({ theme }) => theme.color.head};

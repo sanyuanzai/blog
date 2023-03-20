@@ -4,7 +4,7 @@ interface Iprops {
   children?: ReactNode
 }
 
-const ArticleCategories: FC<Iprops> = () => {
-  return <div>ArticleCategories</div>
+const BlogArticlesList: FC<Iprops> = () => {
+  return <div>BlogArticlesList</div>
 }
-export default ArticleCategories
+export default BlogArticlesList

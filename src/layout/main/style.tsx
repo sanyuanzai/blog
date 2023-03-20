@@ -9,7 +9,7 @@ export const MainContainer = styled.div`
     background-size: 100% 100%;
     position: absolute;
     top: 6rem;
-    height: ${document.body.offsetHeight}px;
+    height: 100vh;
     right: 0;
     left: 0;
     z-index: -9;

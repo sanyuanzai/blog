@@ -6579,7 +6579,7 @@
   "resolved" "https://registry.npmjs.org/date-fns/-/date-fns-2.29.3.tgz"
   "version" "2.29.3"
 
-"dayjs@^1.11.1", "dayjs@>= 1.x", "dayjs@1.x":
+"dayjs@^1.11.1", "dayjs@^1.11.7", "dayjs@>= 1.x", "dayjs@1.x":
   "integrity" "sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ=="
   "resolved" "https://registry.npmjs.org/dayjs/-/dayjs-1.11.7.tgz"
   "version" "1.11.7"
@@ -15328,10 +15328,10 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-18.2.0.tgz"
   "version" "18.2.0"
 
-"react-markdown@^8.0.5":
-  "integrity" "sha512-jGJolWWmOWAvzf+xMdB9zwStViODyyFQhNB/bwCerbBKmrTmgmA599CGiOlP58OId1IMoIRsA8UdI1Lod4zb5A=="
-  "resolved" "https://registry.npmjs.org/react-markdown/-/react-markdown-8.0.5.tgz"
-  "version" "8.0.5"
+"react-markdown@^8.0.6":
+  "integrity" "sha512-KgPWsYgHuftdx510wwIzpwf+5js/iHqBR+fzxefv8Khk3mFbnioF1bmL2idHN3ler0LMQmICKeDrWnZrX9mtbQ=="
+  "resolved" "https://registry.npmjs.org/react-markdown/-/react-markdown-8.0.6.tgz"
+  "version" "8.0.6"
   dependencies:
     "@types/hast" "^2.0.0"
     "@types/prop-types" "^15.0.0"

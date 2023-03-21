@@ -16,6 +16,14 @@ export const GlobalStyle = createGlobalStyle<any>`
     --color-font:${({ theme }) => theme.color.fontPrimary || 'inherit'};
     --screen-width:${ScreenWidth.IpadWidth}
   }
+  .highlight{
+    color:${({ theme }) => theme.color.head || 'inherit'};
+    cursor: pointer;
+    :hover{text-decoration:underline}
+  }
+  .flex{
+    display: flex;
+  }
   h1,h2,h3 {
   color: var(--color-font);}
   /* body{color:${({ theme }) => theme.color.fontPrimary || 'inherit'}} */

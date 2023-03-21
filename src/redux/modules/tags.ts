@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { CategoriesProps, TagListProps } from '../dataTypes'
+import { CategoriesProps, TagListProps } from '../../api/dataTypes'
 const tagSlice = createSlice({
   name: 'tags',
   initialState: { tags: [<TagListProps>{}] },

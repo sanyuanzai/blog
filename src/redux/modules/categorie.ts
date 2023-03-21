@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { CategoriesProps } from '../dataTypes'
+import { CategoriesProps } from '../../api/dataTypes'
 const categorieSlice = createSlice({
   name: 'categorie',
   initialState: { categories: [<CategoriesProps>{}] },

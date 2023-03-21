@@ -29,6 +29,9 @@ const QZRequest = class {
   get<T>(config: AxiosRequestConfig) {
     return this.request<T>({ ...config, method: 'GET' })
   }
+  post<T>(config: AxiosRequestConfig) {
+    return this.request<T>({ ...config, method: 'POST' })
+  }
 }
 
 export default QZRequest

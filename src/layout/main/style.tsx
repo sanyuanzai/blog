@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 export const MainContainer = styled.div`
   width: 100%;
-  padding: 0 1rem;
   ::before {
     content: '';
     background: url(assets/img/bgImage.jpg) fixed;

@@ -1,6 +1,6 @@
 import { getArticleById } from '@/api'
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { ArticlesProps } from '../dataTypes'
+import { ArticlesProps } from '../../api/dataTypes'
 export const fetchArticleAction = createAsyncThunk(
   'article/fetchArticleById',
   (id: string, { dispatch }) => {

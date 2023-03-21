@@ -5,7 +5,7 @@ export const CardContainer = styled(Card)`
   background-color: ${({ theme }) => theme.color.bgPrimary};
   padding: 2.5% 5%;
   min-width: 15rem;
-  border-radius: 0.4rem;
+  border-radius: 0.5rem;
   margin-bottom: 1rem;
   transition: box-shadow ease 400ms;
   :hover {

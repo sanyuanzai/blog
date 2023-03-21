@@ -1,6 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { getArticles, getCategorielist, getTaglist } from '@/api'
-import { ArticlesProps, CategoriesProps, TagListProps } from '../dataTypes'
+import {
+  ArticlesProps,
+  CategoriesProps,
+  TagListProps
+} from '../../api/dataTypes'
 export const fetchArticleAction = createAsyncThunk(
   'home/fetchHomeData',
   (payload, { dispatch }) => {

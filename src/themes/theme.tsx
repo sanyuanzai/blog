@@ -11,7 +11,7 @@ const COLOR_THEME = [
       head: '#3FB887',
       navbg: '#F1F1F1',
       bgPrimary: '#F9F9F9',
-      btn: '#eee',
+      btn: '#dededeb9',
       textPrimary: '#999',
       descPrimary: '#363636'
     },

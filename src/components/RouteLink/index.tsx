@@ -20,14 +20,14 @@ const RouteLink: FC<Iprops> = ({ secondLink, thirdLink }) => {
         三原仔的角落
       </span>
       <span>
-        <span>&gt;</span>
+        <span> &gt; </span>
         <span className="link" onClick={() => navigate(`${secondLink.link}`)}>
           {secondLink.name}
         </span>
       </span>
       {thirdLink && (
         <span>
-          <span>&gt;</span>
+          <span> &gt; </span>
           <span className="link" onClick={() => navigate(`${thirdLink.link}`)}>
             {thirdLink.name}
           </span>
@@ -37,9 +37,11 @@ const RouteLink: FC<Iprops> = ({ secondLink, thirdLink }) => {
   )
 }
 const Containner = styled.div`
+  span {
+    color: ${({ theme }) => theme.color.textPrimary};
+  }
   .link {
     cursor: pointer;
-    color: ${({ theme }) => theme.color.textPrimary};
     :hover {
       text-decoration: underline;
     }

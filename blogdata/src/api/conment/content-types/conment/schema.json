@@ -24,12 +24,8 @@
     "link": {
       "type": "string"
     },
-    "avatar": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false
+    "email": {
+      "type": "string"
     }
   }
 }

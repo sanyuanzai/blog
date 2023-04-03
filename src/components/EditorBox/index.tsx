@@ -1,27 +1,60 @@
 import React from 'react'
 import type { FC, ReactNode } from 'react'
-import { Button, Form, Input } from 'antd'
+import { Button, Form, Input, message } from 'antd'
 import { Row } from '../lib'
-import { FormInstance } from 'rc-field-form'
 import styled from 'styled-components'
 import { ConmentProps, ReplyProps } from '@/api/dataTypes'
-import { postComment } from '@/api'
+import { usePostComment, usePostReply } from '@/api'
+import { useThrottle } from '@/utils/hooks/useThrottle'
+import { useForm } from 'antd/es/form/Form'
 interface Iprops {
   children?: ReactNode
   Edit?: boolean
   isReply?: boolean
   comment?: ConmentProps | ReplyProps
+  articleId?: number
+  setEdit?: () => void
 }
 
-const EditorBox: FC<Iprops> = ({ Edit, comment, isReply }) => {
+const EditorBox: FC<Iprops> = ({
+  Edit,
+  comment,
+  isReply,
+  articleId,
+  setEdit
+}) => {
   const emailBlur = () => {
     const reg = /^[1-9][0-9]+@qq.com$/
     // const email = form.getFieldValue('email')
   }
-  const onFinish = (value: Partial<ConmentProps>) => {
-    const { result, loading } = postComment(value)
-    console.log(result, loading)
-  }
+  const [form] = useForm()
+  const { mutateAsync: insertComment, isSuccess } = usePostComment()
+  const { mutateAsync: insertReply, isSuccess: ReplySuccess } = usePostReply()
+  const onFinish = useThrottle(
+    (value: Partial<ConmentProps>) => {
+      if (value.content === undefined || null) {
+        message.warning('请说点什么吧~')
+        return
+      }
+      if (isReply && comment) {
+        const { id: conment_id, nickname: toUserName } = comment
+        insertReply({
+          ...value,
+          toUserName,
+          comment: { connect: [conment_id] }
+        })
+        message.open({ type: 'success', content: '回复成功' })
+        setEdit?.()
+      } else {
+        const post_id = articleId
+        insertComment({ ...value, post_id })
+        message.open({ type: 'success', content: '评论成功' })
+      }
+      form.setFieldValue('content', null)
+    },
+    1000,
+    true
+  )
   //表单默认值配置
   const initialValues = {}
   const placeholder = !isReply
@@ -75,7 +108,7 @@ const EditorBox: FC<Iprops> = ({ Edit, comment, isReply }) => {
 }
 export default EditorBox
 
-const EditorBoxContainer = styled.div<Iprops>`
+const EditorBoxContainer = styled.div<Partial<Iprops>>`
   margin: 1rem 0;
   max-height: 15rem;
   ${(props) => (props.Edit ? 'max-height:0' : null)};

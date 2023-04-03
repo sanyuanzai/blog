@@ -24,6 +24,8 @@ export interface ConmentProps {
   content: string
   link?: string
   createdAt: string
+  post_id: number
+  replies: ReplyProps[]
 }
 export interface ReplyProps {
   id: number
@@ -33,7 +35,7 @@ export interface ReplyProps {
   url?: string
   email: string
   toReplyId: number
-  to_conment_id: any
+  comment: any
   createdAt: string
 }
 export interface VisitorInfoProps {

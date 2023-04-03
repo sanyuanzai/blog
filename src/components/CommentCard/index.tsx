@@ -8,13 +8,15 @@ import { useRelativeTime } from '@/utils/hooks/useRelativeTime'
 interface Iprops {
   children?: ReactNode
   comment: ConmentProps | ReplyProps
+  reply?: boolean
 }
 
-const CommentCard: FC<Iprops> = ({ comment }) => {
+const CommentCard: FC<Iprops> = ({ comment, reply }) => {
   const [Edit, setEdit] = useState(true)
+
   const postDate = useRelativeTime(comment.createdAt)
   return (
-    <CommentCardContainer>
+    <CommentCardContainer reply={reply}>
       <div className="user">
         <span className="name">{comment.nickname}</span>
         <span className="postdate">{postDate}</span>
@@ -23,14 +25,19 @@ const CommentCard: FC<Iprops> = ({ comment }) => {
       <p className="reply highlight" onClick={() => setEdit((state) => !state)}>
         Reply
       </p>
-      <EditorBox Edit={Edit} isReply={true} comment={comment} />
+      <EditorBox
+        Edit={Edit}
+        setEdit={() => setEdit(true)}
+        isReply={true}
+        comment={comment}
+      />
     </CommentCardContainer>
   )
 }
 export default CommentCard
 
-const CommentCardContainer = styled.div`
-  border-bottom: 1px solid ${({ theme }) => theme.color.btn};
+const CommentCardContainer = styled.div<Partial<Iprops>>`
+  margin-left: ${(props) => props.reply && '0.5rem'};
   .user {
     margin: 1rem 0;
     .name {

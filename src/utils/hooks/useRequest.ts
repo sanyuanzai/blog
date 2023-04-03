@@ -3,21 +3,25 @@ import { useState } from 'react'
 import { useMount } from './useMount'
 
 // import { useState } from 'react'
-export function useRequest<T>(
-  callback: <T>() => Promise<AxiosResponse<T, any>>
+export function useRequest(
+  fetch: (params: object) => Promise<any>,
+  params: object
 ) {
-  const [data, setData] = useState<T[]>()
-  // useEffect(() => {
-  //   ;(async () => {
-  //     data = await callback()
-  //   })()
-  // }, [])
-  //   const [error, setError] = useState<{ [message: 'message']: string }>()
-  //     .then((res) => res.data)
-  //     .catch((err) => setError(err))
-  // return { data }
+  const [result, setResult] = useState()
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState()
   useMount(() => {
-    callback<T>().then((res) => console.log(res.data))
+    ;(async () => {
+      setLoading(true)
+      try {
+        const result = await fetch(params)
+        setResult(result)
+      } catch (e: any) {
+        setError(e)
+      } finally {
+        setLoading(false)
+      }
+    })()
   })
+  return { result, loading, error }
 }
-// config: AxiosRequestConfig

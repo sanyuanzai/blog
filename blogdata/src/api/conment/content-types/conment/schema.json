@@ -26,6 +26,12 @@
     },
     "email": {
       "type": "string"
+    },
+    "replies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::comment.comment",
+      "mappedBy": "comment"
     }
   }
 }

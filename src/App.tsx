@@ -6,6 +6,7 @@ import { ConfigProvider } from 'antd'
 import { AppContainer } from './app_style'
 import Header from './layout/header'
 import Main from './layout/main'
+import { QueryClientProvider, QueryClient } from 'react-query'
 import Footer from './layout/footer'
 import COLOR_THEME, { ColorSchemeMode } from './themes/theme'
 import { GlobalStyle } from './themes/global'
@@ -13,6 +14,7 @@ interface Iprops {
   children?: ReactNode
 }
 const App: FC<Iprops> = () => {
+  const queryClient = new QueryClient()
   const [mode, setMode] = useState<ColorSchemeMode>(ColorSchemeMode.dark)
   const sysModeChangeHandler = useCallback((e: any) => {
     if (e.matches) {
@@ -47,13 +49,15 @@ const App: FC<Iprops> = () => {
           }
         }}
       >
-        <BrowserRouter>
-          <AppContainer>
-            <Header setMode={setMode} mode={mode} />
-            <Main />
-            <Footer />
-          </AppContainer>
-        </BrowserRouter>
+        <QueryClientProvider client={queryClient}>
+          <BrowserRouter>
+            <AppContainer>
+              <Header setMode={setMode} mode={mode} />
+              <Main />
+              <Footer />
+            </AppContainer>
+          </BrowserRouter>
+        </QueryClientProvider>
       </ConfigProvider>
       <GlobalStyle />
     </ThemeProvider>
